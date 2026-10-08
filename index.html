@@ -149,6 +149,24 @@ h1 em,h2 em{font-weight:400;color:var(--gold)}
 .entry-controls button:last-child{color:#ffb4bc}
 .entry-controls button:disabled{opacity:.25;cursor:default}
 @media(max-width:420px){.entry{grid-template-columns:26px minmax(0,1fr) auto;gap:5px}.entry-num{width:26px;height:26px}.entry-controls{gap:3px}.entry-controls button{width:28px}.slice-input{padding:0 8px;font-size:12px}}
+/* Compact configuration: controls remain visible, long lists scroll inside. */
+#configView{height:calc(100svh - 76px);display:flex;flex-direction:column;padding:0 16px max(12px,env(safe-area-inset-bottom));min-height:0}
+#configView .hero{flex:none;padding:4px 0 12px}
+#configView .hero .kicker{display:none}
+#configView h1{font-size:clamp(21px,5.2vw,30px);line-height:1.12;letter-spacing:0}
+#configView h1 br{display:none}
+#configView h1 em{display:inline}
+#configView .lead{font-size:11px;line-height:1.35;margin:6px auto 0;max-width:540px}
+#configView .panel{min-height:0;flex:1;padding:14px;gap:10px;grid-template-rows:auto minmax(0,1fr) auto auto}
+#configView .panel>div:nth-child(2){min-height:0;display:flex;flex-direction:column}
+#configView .entries{min-height:0;max-height:none;overflow:auto;gap:6px}
+#configView .slice-input{height:42px}
+#configView .label{margin-bottom:6px;font-size:9px;letter-spacing:1px}
+#configView .round-btn,#configView .number-box{height:42px}
+#configView #createWheel{min-height:46px;margin:0}
+#configView .save-note{margin:0;font-size:9px}
+@media(max-height:740px){#configView{height:calc(100svh - 62px)}}
+@media(max-height:500px){#configView .lead{display:none}#configView .hero{padding-bottom:6px}}
 </style>
 </head>
 <body>
